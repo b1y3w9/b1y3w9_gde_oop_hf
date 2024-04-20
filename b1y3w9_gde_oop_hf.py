@@ -26,3 +26,21 @@ class Szalloda:
         self.nev = nev
         self.szobak = []
         self.foglalasok = []
+
+    def szoba_hozzaad(self, szoba):
+        self.szobak.append(szoba)
+
+    def foglalas_felvetel(self, foglalas):
+        self.foglalasok.append(foglalas)
+
+    def foglalas_lemondas(self, foglalas):
+        if foglalas in self.foglalasok:
+            self.foglalasok.remove(foglalas)
+            print("Foglalás sikeresen törölve.")
+        else:
+            print("Nincs ilyen foglalás.")
+
+    def foglalasok_listazasa(self):
+        print("Foglalások:")
+        for foglalas in self.foglalasok:
+            print(foglalas)
